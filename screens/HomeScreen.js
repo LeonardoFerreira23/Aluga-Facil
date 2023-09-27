@@ -14,7 +14,7 @@ import ListaCasas from '../components/ListaCasas';
 export default function HomeScreen() {
     const navigation = useNavigation();
   return (
-    <SafeAreaView className="flex-1 bg-[#fee2e2]">
+    <SafeAreaView className="flex-1 bg-[#fcd5ce]">
 
       <View className="flex-row justify-between items-center p-3 bg-white ">
         <TouchableOpacity className ="pt-1">
@@ -57,9 +57,12 @@ export default function HomeScreen() {
         }}
         />
       </View>
+
       <ScrollView> 
         <ListaCasas />
       </ScrollView>
+
+      
     </SafeAreaView>
   );
 }

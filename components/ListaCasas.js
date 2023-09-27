@@ -25,7 +25,7 @@ export default function ListaCasas() {
 
 const CasaCard = ({item, navigation})=>{
     return (
-        <SafeAreaView>
+        <SafeAreaView className="items-center">
             <TouchableOpacity
                 onPress={()=> navigation.navigate('HouseScreen',{...item})} 
                 style={{width: 320, height: 300}} 

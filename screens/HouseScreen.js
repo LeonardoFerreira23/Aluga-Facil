@@ -13,7 +13,7 @@ export default function HouseScreen(props){
         <SafeAreaView className="w-full h-full">
             <CardHouse />    
             <View className="object-cover">
-                    <Image source={item.image}
+                    <Image source={item?.image}
                     style={{width: 500, height: 400}}
                     />
             </View>
@@ -68,5 +68,5 @@ export default function HouseScreen(props){
             </ScrollView>
         </View>
     </SafeAreaView>
-        );
+    );
 }

@@ -8,8 +8,8 @@ export default function CardHouse() {
   return (
     <View className="absolute bottom-5 w-full z-50 ">
         <TouchableOpacity 
-            onPress={()=> navigation.navigate('CodeScreen')}
-            className="bg-[#fee2e2] flew-row justify-between items-center mx-5 rounded-full p-4 py-2 shadow-lg">
+            onPress={()=> navigation.navigate('FormScreen')}
+            className="bg-[#fec89a] flew-row justify-between items-center mx-5 rounded-full p-4 py-2 shadow-lg">
           <View className="p-2 px-4 rounded-full ">
               <Text className="font-extrabold text-neutral-700 text-lg">
                   Agende uma visita!

@@ -12,7 +12,7 @@ export default function LoginScreen() {
   const navigation = useNavigation();
   return (
 
-      <SafeAreaView className="flex-1 mb- bg-red-300">
+      <SafeAreaView className="flex-1 mb- bg-[#F4DADB]">
         <View className="flex-row justify-start">
             <TouchableOpacity onPress={()=> navigation.goBack()}
                 className="bg-white p-5 rounded-tr-2xl rounded-bl-2xl ml-4"
@@ -36,7 +36,7 @@ export default function LoginScreen() {
                 Endereço de E-Mail
               </Text>
               <TextInput
-                  className="p-4 bg-gray-100 text-gray-700 round-2x1 mb-3"
+                  className="p-4 bg-gray-100 text-gray-700 rounded-2xl mb-3"
                   placeholder="email"
                   value="fernanda@gmail.com"
               />
