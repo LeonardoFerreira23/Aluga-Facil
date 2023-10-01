@@ -1,28 +1,26 @@
-import { View, Text, SafeAreaView, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, StyleSheet, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import React , {useState} from 'react';
 import BackButton from '../components/BackButton';
 import { HomeIcon } from 'react-native-heroicons/outline';
-
+import { useForm, Controller } from 'react-hook-form';
 
 export default function TestScreen() {
-  const[username, setUsername] = useState("")
-  const[cpf, setCpf] = useState("")
-  const[idade, setIdade] = useState("")
-
-  function handleSignIn(){
-    if(username === '' || email === '' || password === ''){
-      alert("PREENCHA OS CAMPOS")
-      return;
+    const[username, setUsername] = useState("")
+    const[cpf, setCpf] = useState("")
+    const[idade, setIdade] = useState("")
+  
+    function handleSignIn(){
+      if(username === '' || email === '' || password === ''){
+        alert("SENHA GERADA: 1234")
+        return;
+      }
+  
+      const data = {
+        username,
+        email,
+        password,
+      }
     }
-
-    const data = {
-      username,
-      email,
-      password,
-    }
-
-    console.log(data);
-  }
 
 
   return (
@@ -40,12 +38,13 @@ export default function TestScreen() {
         </Text>
       </View>
 
-    <View className="w-full">      
+    {/* Formulario de agendamento */}
+    <ScrollView className="w-full">      
         <Text className="text-black font-bold ml-4 text-lg">
           Nome Completo
         </Text>
         <TextInput 
-        className="w-full p-4 bg-white text-gray-700 mb-3 rounded-2xl"
+        className="w-full p-4 bg-white text-black mb-3 rounded-2xl"
         onChangeText={setUsername}
         value={username}
         placeholder='Insira seu nome completo'
@@ -55,7 +54,7 @@ export default function TestScreen() {
           CPF
         </Text>
         <TextInput 
-        className="w-full p-4 bg-white text-gray-700 mb-3 rounded-2xl"
+        className="w-full p-4 bg-white text-black mb-3 rounded-2xl"
         onChangeText={setCpf}
         value={cpf}
         placeholder='Insira seu CPF'
@@ -65,15 +64,29 @@ export default function TestScreen() {
           Data de nascimento
         </Text>
         <TextInput 
-        className="w-full p-4 bg-white text-gray-700 mb-3 rounded-2xl"
+        className="w-full p-4 bg-white text-black mb-3 rounded-2xl"
         onChangeText={setIdade}
         value={idade}
         placeholder='DD/MM/YY'
         />
-      </View>
 
+        <Text className="text-black font-bold ml-4 text-lg mt-3">
+          Documento de identificação
+        </Text>
+        <TextInput 
+        className="w-full h-40 bg-white text-gray-700 mb-3 rounded-2xl"
+        onChangeText={setIdade}
+        value={idade}
+        placeholder='Insira uma foto do seu documento'
+        />
+
+      </ScrollView>
+
+    {/* botão de continuar para próxima tela */}
       <View className="absolute bottom-5 w-full z-50">
-        <TouchableOpacity className="bg-[#fec89a] flew-row justify-between items-center mx-5 rounded-full p-4 py-2 shadow-lg ">
+        <TouchableOpacity
+        onPress={handleSignIn} 
+        className="bg-[#fec89a] flew-row justify-between items-center mx-5 rounded-full p-4 py-2 shadow-lg ">
           <Text className="font-extrabold text-neutral-700 text-lg">
             Continuar
           </Text>
@@ -85,24 +98,3 @@ export default function TestScreen() {
 }
 
 
-const styles = StyleSheet.create({
-  button:{
-    width: '100%',
-    height: 40,
-    backgroundColor: '#E4908A',
-    borderRadius: 4,
-    justifyContent: 4,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  buttonText:{
-    color: '#FFF',
-    fontWeight: 'bold',
-    fontSize: 18,
-  },
-  labelError:{
-    alignSelf: 'flex-start',
-    color: '#ff375b',
-    marginBottom: 8,
-  },
-});

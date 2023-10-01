@@ -29,7 +29,7 @@ const CasaCard = ({item, navigation})=>{
             <TouchableOpacity
                 onPress={()=> navigation.navigate('HouseScreen',{...item})} 
                 style={{width: 320, height: 300}} 
-                className="bg-white rounded-lg p-3 m-2 justify-center ">
+                className="bg-white rounded-lg p-3 m-2 items-start">
                 <Image source={item.image} 
                     style={{width: 300, height: 200}} 
                     className="rounded-lg" />

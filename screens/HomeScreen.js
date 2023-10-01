@@ -9,6 +9,7 @@ import { categorias, items } from '../constants';
 import { useNavigation } from '@react-navigation/native';
 import HouseScreen from './HouseScreen';
 import ListaCasas from '../components/ListaCasas';
+import CommunityScreen from './CommunityScreen';
 
 
 export default function HomeScreen() {
@@ -17,7 +18,9 @@ export default function HomeScreen() {
     <SafeAreaView className="flex-1 bg-[#fcd5ce]">
 
       <View className="flex-row justify-between items-center p-3 bg-white ">
-        <TouchableOpacity className ="pt-1">
+        <TouchableOpacity className ="pt-1"
+        onPress={()=> navigation.navigate('CommunityScreen')}  
+        >      
               <UserCircleIcon color="gray" fill="white" size ="35"/>
           </TouchableOpacity>
           <Text className="text-2xl">
@@ -49,7 +52,7 @@ export default function HomeScreen() {
               <TouchableOpacity
                 className="bg-gray-100 p-2 px-5 rounded-full mr-3 mb-2 shadow justify-center"
               >
-                <Text className="font-semibold">
+                <Text className="font-bold">
                   {item.title}
                 </Text>
               </TouchableOpacity>
@@ -62,7 +65,7 @@ export default function HomeScreen() {
         <ListaCasas />
       </ScrollView>
 
-      
+
     </SafeAreaView>
   );
 }

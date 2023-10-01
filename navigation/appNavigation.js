@@ -6,7 +6,9 @@ import HouseScreen from '../screens/HouseScreen';
 import CodeScreen from '../screens/CodeScreen';
 import WelcomeScreen from '../screens/WelcomeScreen';
 import FormScreen from '../screens/FormScreen';
+import CommunityScreen from '../screens/CommunityScreen';
 import TestScreen from '../screens/TestScreen';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -19,6 +21,7 @@ export default function AppNavigation() {
           <Stack.Screen options={{headerShown: false}} name="HomeScreen" component={HomeScreen} />
           <Stack.Screen options={{headerShown: false}} name="HouseScreen" component={HouseScreen} />
           <Stack.Screen options={{headerShown: false}} name="FormScreen" component={FormScreen} />
+          <Stack.Screen options={{headerShown: false}} name="CommunityScreen" component={CommunityScreen}/>
           <Stack.Screen options={{headerShown: false}} name="CodeScreen" component={CodeScreen} />
           <Stack.Screen options={{headerShown: false}} name="Login" component={LoginScreen}/>
         </Stack.Navigator>
